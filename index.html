@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>City Break Planner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="Product Single Page Application" />
+  <meta name="author" content="City break planner" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="shortcut icon" type="image/png" href="" />
+</head>
+
+<body onhashchange="pageChange()">
+  <!-- tabbar navigation -->
+  <!-- navigation menu - Marius -->
+  <nav>
+    <div class="tabbar" id="menu">
+      <div class="menu-item">
+        <a href="#home" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25.048" height="21.917" viewBox="0 0 25.048 21.917">
+            <path id="home-icon" class="svg"
+              d="M12.524,0,0,9.393H3.131V21.917H9.393V15.655h6.262v6.262h6.262V9.3l3.131.094Z" />
+          </svg></br></a>
+      </div>
+
+
+      <div class="menu-item">
+        <a href="#bookmarks" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="19.142" height="23.252" viewBox="0 0 19.142 23.252">
+            <path id="Icon_awesome-bookmark" data-name="Icon awesome-bookmark" class="cls-1"
+              d="M0,23.252V2.18A2.294,2.294,0,0,1,2.393,0H16.749a2.294,2.294,0,0,1,2.393,2.18V23.252L9.571,18.166Z" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="menu-item">
+        <a href="#profile" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="23.252" height="23.252" viewBox="0 0 23.252 23.252">
+            <path id="Icon_material-person" data-name="Icon material-person" class="cls-1"
+              d="M17.626,17.626a5.813,5.813,0,1,0-5.813-5.813A5.811,5.811,0,0,0,17.626,17.626Zm0,2.906C13.746,20.532,6,22.48,6,26.345v2.906H29.252V26.345C29.252,22.48,21.506,20.532,17.626,20.532Z"
+              transform="translate(-6 -6)" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+  </nav>
+
+  <!-- Onboarding pages David -->
+  <!-- Welcome page start -->
+  <section id="welcome-page" class="page">
+    <img src="/img/logogo.svg" class="logo-welcome-screen" />
+    <h1 class="welcome-text">
+      Welcome to<br />
+      City Break Planner
+    </h1>
+    <form>
+      <input placeholder="How should we call you?" class="input-onboarding" />
+      <div class="buttons-on-welcome-page">
+        <button class="welcome-page-done-button btn" type="button" onclick="navigateTo('onboarding-1');">
+          Done
+        </button>
+        <button class="welcome-page-skip-button btn" type="button" onclick="navigateTo('home');">
+          Skip
+        </button>
+      </div>
+    </form>
+  </section>
+  <!-- Welcome page end -->
+
+  <!-- First Onboarding start -->
+  <section id="onboarding-1" class="page">
+    <img src="./img/visitdenmark-logo.png" class="visitdenmark-logo" alt="visit denmark logo" />
+    <h2 class="heading-on-onboarding1">
+      Welcome to Denmark, the land of everyday wonder
+    </h2>
+    <div class="onboarding1-city-images">
+      <img class="city-image" src="./img/aarhus.png" alt="Aarhus" />
+      <img class="city-image" src="./img/copenhagen.png" alt="Copenhagen" />
+      <img class="city-image" src="./img/odense.png" alt="Odense" />
+      <img class="city-image" src="./img/aalborg.png" alt="Aalborg" />
+    </div>
+    <!-- here comes the place for the "loader" -->
+    <img src="./img/loader-1.png" class="loader" alt="loader" />
+    <div class="back-next-button-div-1">
+      <button type="button" class="back-button btn" onclick="navigateTo('welcome-page');">
+        <img src="./img/left-arrow-onboarding-blue.png" alt="left-arrow-onboarding-blue"
+          class="left-arrow-onboarding-blue"> Back
+      </button>
+      <button type="button" class="next-button btn" onclick="navigateTo('onboarding-2');">
+        Next <img src="./img/right-arrow-onboarding-white.png" alt="right-arrow-onboarding-blue"
+          class="right-arrow-onboarding-blue">
+      </button>
+    </div>
+  </section>
+  <!-- First Onboarding end -->
+
+  <!-- Second Onboarding start -->
+  <section id="onboarding-2" class="page">
+    <img src="./img/onboard1.svg" class="onboarding2-image" alt="" />
+    <p class="onboarding2-text">
+      Start to search for activities, <br />places to eat, attractions or
+      events!
+    </p>
+    <!-- here comes the place for the "loader" -->
+    <img src="./img/loader-2.png" class="loader" alt="loader" />
+    <div class="back-next-button-div-2">
+      <button type="button" class="back-button btn" onclick="navigateTo('onboarding-1');">
+        <img src="./img/left-arrow-onboarding-blue.png" alt="left-arrow-onboarding-blue"
+          class="left-arrow-onboarding-blue"> Back
+      </button>
+      <button type="button" class="next-button btn" onclick="navigateTo('onboarding-3');">
+        Next <img src="./img/right-arrow-onboarding-white.png" alt="right-arrow-onboarding-blue"
+          class="right-arrow-onboarding-blue">
+      </button>
+    </div>
+  </section>
+  <!-- Second Onboarding end -->
+
+  <!-- Third Onboarding start -->
+  <section id="onboarding-3" class="page">
+    <img src="./img/onboard2.svg" class="onboarding3-image" alt="" />
+    <p class="onboarding3-text">
+      Search and filter<br />
+      The search results, to find<br />
+      The perfect match.
+    </p>
+    <!-- here comes the place for the "loader" -->
+    <img src="./img/loader-3.png" class="loader" alt="loader" />
+    <div class="back-next-button-div-3">
+      <button type="button" class="back-button btn" onclick="navigateTo('onboarding-2');">
+        <img src="./img/left-arrow-onboarding-blue.png" alt="left-arrow-onboarding-blue"
+          class="left-arrow-onboarding-blue"> Back
+      </button>
+      <button type="button" class="next-button btn" onclick="navigateTo('onboarding-4');">
+        Next <img src="./img/right-arrow-onboarding-white.png" alt="right-arrow-onboarding-blue"
+          class="right-arrow-onboarding-blue">
+      </button>
+    </div>
+  </section>
+  <!-- Third Onboarding end -->
+
+  <!-- Fourth Onboarding start -->
+  <section id="onboarding-4" class="page">
+    <img src="./img/onboard3.png" class="onboarding4-image" alt="" />
+    <p class="onboarding4-text">
+      Add the favourite ones<br> to your calendar.
+    </p>
+    <!-- here comes the place for the "loader" -->
+    <img src="./img/loader-4.png" class="loader" alt="loader" />
+    <div class="back-next-button-div-4">
+      <button type="button" class="get-started-button btn" onclick="navigateTo('home'); showMenu();">
+        Get started
+      </button>
+    </div>
+  </section>
+  <!-- Fourth Onboarding end -->
+
+  <!-- home page -->
+  <section id="home" class="page pages">
+    <p class="home-regular"> Hello, <b>stranger</b></p>
+    <p class="home-header">Let's explore <span class="arhus_txt">Aarhus</span> together</p>
+
+    <input type="search" placeholder="Explore" class="explore-search2" onkeyup="searchedData(this.value)" />
+    <section id="searchedData" class="searchedresult"></section>
+    <!-- <button type="button" name="button" onclick="hideOutOfStock()">Hide out of stock</button> -->
+    <section id="products-container">
+      <div class="item1" onclick="navigateTo('placestoeat')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32.003" height="36.444" viewBox="0 0 32.003 36.444">
+          <path id="Icon_material-event-note" data-name="Icon material-event-note"
+            d="M29.391,17.9H11.612v3.644h17.78ZM32.947,5.144H31.169V1.5H27.613V5.144H13.39V1.5H9.834V5.144H8.056A3.585,3.585,0,0,0,4.518,8.789L4.5,34.3a3.6,3.6,0,0,0,3.556,3.644H32.947A3.612,3.612,0,0,0,36.5,34.3V8.789A3.612,3.612,0,0,0,32.947,5.144Zm0,29.155H8.056V14.255H32.947Zm-8.89-9.111H11.612v3.644H24.057Z"
+            transform="translate(-4.5 -1.5)" fill="#DBA200" />
+        </svg>
+        <p class="txt_card"> Places to eat</p>
+      </div>
+      <div class="item2" onclick="navigateTo('activities')"><svg xmlns="http://www.w3.org/2000/svg" width="32.003"
+          height="36.444" viewBox="0 0 32.003 36.444">
+          <path id="Icon_material-event-note" data-name="Icon material-event-note"
+            d="M29.391,17.9H11.612v3.644h17.78ZM32.947,5.144H31.169V1.5H27.613V5.144H13.39V1.5H9.834V5.144H8.056A3.585,3.585,0,0,0,4.518,8.789L4.5,34.3a3.6,3.6,0,0,0,3.556,3.644H32.947A3.612,3.612,0,0,0,36.5,34.3V8.789A3.612,3.612,0,0,0,32.947,5.144Zm0,29.155H8.056V14.255H32.947Zm-8.89-9.111H11.612v3.644H24.057Z"
+            transform="translate(-4.5 -1.5)" fill="#00587A" />
+        </svg>
+        <p class="txt_card">Activities</p>
+      </div>
+      <div class="item3"><svg xmlns="http://www.w3.org/2000/svg" width="32.003" height="36.444"
+          viewBox="0 0 32.003 36.444">
+          <path id="Icon_material-event-note" data-name="Icon material-event-note"
+            d="M29.391,17.9H11.612v3.644h17.78ZM32.947,5.144H31.169V1.5H27.613V5.144H13.39V1.5H9.834V5.144H8.056A3.585,3.585,0,0,0,4.518,8.789L4.5,34.3a3.6,3.6,0,0,0,3.556,3.644H32.947A3.612,3.612,0,0,0,36.5,34.3V8.789A3.612,3.612,0,0,0,32.947,5.144Zm0,29.155H8.056V14.255H32.947Zm-8.89-9.111H11.612v3.644H24.057Z"
+            transform="translate(-4.5 -1.5)" fill="#007554" />
+        </svg>
+        <p class="txt_card">Attractions</p>
+      </div>
+      <div class="item4"><svg xmlns="http://www.w3.org/2000/svg" width="32.003" height="36.444"
+          viewBox="0 0 32.003 36.444">
+          <path id="Icon_material-event-note" data-name="Icon material-event-note"
+            d="M29.391,17.9H11.612v3.644h17.78ZM32.947,5.144H31.169V1.5H27.613V5.144H13.39V1.5H9.834V5.144H8.056A3.585,3.585,0,0,0,4.518,8.789L4.5,34.3a3.6,3.6,0,0,0,3.556,3.644H32.947A3.612,3.612,0,0,0,36.5,34.3V8.789A3.612,3.612,0,0,0,32.947,5.144Zm0,29.155H8.056V14.255H32.947Zm-8.89-9.111H11.612v3.644H24.057Z"
+            transform="translate(-4.5 -1.5)" fill="#9A0035" />
+        </svg>
+        <p class="txt_card">Events</p>
+      </div>
+    </section>
+    <h1 class="h1_style">Popular</h1>
+
+    <section id="popular_cards">
+      <div class="popular_container">
+        <img src="img/man-plays-saxophone.jpg" class="img-pop">
+        <div class="pop_txt_style">
+          <p class="pop-title">Aarhus Jazz Festival</p>
+          <p class="pop-description">Godsbanen, Skovgaardsgade 3</p>
+        </div>
+      </div>
+
+      <div class="popular_container">
+        <img src="img/Tour.png" class="img-pop">
+        <div class="pop_txt_style">
+          <p class="pop-title">Tour de Femme</p>
+          <p class="pop-description">Aarhus C 8000</p>
+        </div>
+      </div>
+
+      <div class="popular_container">
+        <img src="img/viking.jpg" class="img-pop">
+        <div class="pop_txt_style">
+          <p class="pop-title">Moesgaard Viking Moot</p>
+          <p class="pop-description">Godsbanen, Skovgaardsgade 3</p>
+        </div>
+      </div>
+    </section>
+
+
+    <h1 class="h1_style">You might like </h1>
+
+    <section id="placesYouLike">
+      <div class="like_container">
+        <img src="img/romer.jpg" class="img-like">
+        <p class="like-title">Rømer's</p>
+        <p class="like-description">Åboulevarden 50</p>
+        <p class="like-description">Cafes</p>
+      </div>
+
+      <div class="like_container">
+        <img src="img/Tour.png" class="img-like">
+        <p class="like-title">Tour de Femme</p>
+        <p class="like-description">Aarhus C 8000</p>
+        <p class="like-description">Events</p>
+      </div>
+    </section>
+
+
+  </section>
+
+  <!-- places to eat page - Marius -->
+  <section id="placestoeat" class="page">
+    <div class="filter-slider">
+      <div class="filter-content">
+        <img class="back-icon-filter" src="/img/icons/back-icon.svg" alt="back icon" onclick="getBackFilter();" />
+        <p class="filter-title">Filter by type</p>
+        <div class="filter-horizontal-scrolling">
+          <button class="button-filter" onclick="filterByType(this.value)" value="all" id="all">
+            <div class="filter-by-type active-type-all allBtn" id="all">
+              <p class="filter-label black">All</p>
+            </div>
+          </button>
+          <button class="button-filter" onclick="filterByType(this.value)" value="Restaurants" id="Restaurants">
+            <div class="filter-by-type" id="Restaurants">
+              <img class="subCategory-image"
+                src="https://files.guidedanmark.org/files/407/218969_VDKType-Restaurants.jpg">
+              <p class="filter-label">Restaurants</p>
+            </div>
+          </button>
+          <button class="button-filter" onclick="filterByType(this.value)" value="Nightlife and Clubs"
+            id="Nightlife and Clubs">
+            <div class="filter-by-type" id="Nightlife and Clubs">
+              <img class="subCategory-image"
+                src="https://files.guidedanmark.org/files/407/218969_VDKType-Restaurants.jpg">
+              <p class="filter-label">Nightlife and Clubs</p>
+            </div>
+          </button>
+          <button class="button-filter" onclick="filterByType(this.value)" value="Cafés" id="Cafés">
+            <div class="filter-by-type" id="Cafés">
+              <img class="subCategory-image"
+                src="https://files.guidedanmark.org/files/407/218969_VDKType-Restaurants.jpg">
+              <p class="filter-label">Cafés</p>
+            </div>
+          </button>
+          <button class="button-filter" onclick="filterByType(this.value)" value="Local Specialties"
+            id="Local Specialties">
+            <div class="filter-by-type" id="Local Specialties">
+              <img class="subCategory-image"
+                src="https://files.guidedanmark.org/files/407/218969_VDKType-Restaurants.jpg">
+              <p class="filter-label">Local Specialties</p>
+            </div>
+          </button>
+        </div>
+        <p class="filter-title-2">Filter by something</p>
+        <div class="filter-by-something">
+          <button class="filter-by-something-box active-filter" onclick="filterBySomething(this.value)" value="default"
+            id="default">default</button>
+          <button class="filter-by-something-box" onclick="filterBySomething(this.value)" value="family"
+            id="family">family</button>
+          <button class="filter-by-something-box" onclick="filterBySomething(this.value)" value="single"
+            id="single">single</button>
+          <button class="filter-by-something-box" onclick="filterBySomething(this.value)" value="couple"
+            id="couple">couple</button>
+          <button class="filter-by-something-box" onclick="filterBySomething(this.value)" value="bigger group"
+            id="bigger group">bigger group</button>
+          <button class="filter-by-something-box" onclick="filterBySomething(this.value)" value="friends"
+            id="friends">friends</button>
+        </div>
+
+        <div class="filter-cta-buttons">
+          <button class="reset-button" onclick="orderByLatest(); getBackFilter()">reset</button>
+          <button class="apply-button" onclick="getBackFilter()">apply</button>
+        </div>
+
+      </div>
+    </div>
+    <div class="container-placestoeat">
+      <div class="sticky-header">
+        <div class="sticky-header-width">
+          <div class="flexbox-placestoeat-header">
+            <img class="back-icon" src="/img/icons/back-icon.svg" alt="back icon" onclick="goBack();" />
+            <p class="header-placestoeat">
+              Places to eat in <span class="red">Aarhus</span>
+            </p>
+          </div>
+          <div class="explore-flexbox">
+            <input placeholder="Explore" class="explore-search" onkeyup="searchPlacesToEat(this.value)" />
+            <img class="filter-icon" src="/img/icons/filter-icon.svg" alt="filter icon" onclick="openFilter()" />
+          </div>
+        </div>
+      </div>
+      <div class="content-box">
+        <select id="sortBy" onchange="orderBy(this.value)" class="order-select">
+          <option value="latest" selected>Latest</option>
+          <option value="oldest">Oldest</option>
+        </select>
+
+        <div id="fetched-placesToEat"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- activities page - Marius -->
+  <section id="activities" class="page">
+    <div class="filter-slider">
+      <div class="filter-content">
+        <img class="back-icon-filter" src="/img/icons/back-icon.svg" alt="back icon" onclick="getBackFilter();" />
+        <p class="filter-title">Filter by type</p>
+        <div class="filter-horizontal-scrolling">
+          <button class="button-filter" onclick="filterByType(this.value)" value="all" id="all">
+            <div class="filter-by-type active-type-all allBtn" id="all">
+              <p class="filter-label black">All</p>
+            </div>
+          </button>
+          <button class="button-filter" onclick="filterByType(this.value)" value="Sport and Activities"
+            id="Sport and Activities">
+            <div class="filter-by-type" id="Sport and Activities">
+              <img class="subCategory-image"
+                src="https://files.guidedanmark.org/files/466/219162_VDKType-Sport-og-andre-aktiviteter.jpg">
+              <p class="filter-label">Sport and Activities</p>
+            </div>
+          </button>
+          <button class="button-filter" onclick="filterByType(this.value)" value="Boat Rental" id="Boat Rental">
+            <div class="filter-by-type" id="Boat Rental">
+              <img class="subCategory-image"
+                src="hhttps://files.guidedanmark.org/files/466/219167_VDKType-baadudlejere.jpg">
+              <p class="filter-label">Boat Rental</p>
+            </div>
+          </button>
+          <button class="button-filter" onclick="filterByType(this.value)" value="Boat Rental" id="Boat Rental">
+            <div class="filter-by-type" id="Boat Rental">
+              <img class="subCategory-image"
+                src="hhttps://files.guidedanmark.org/files/466/219167_VDKType-baadudlejere.jpg">
+              <p class="filter-label">Boat Rental</p>
+            </div>
+          </button>
+          <button class="button-filter" onclick="filterByType(this.value)" value="Theatres/Cinemas"
+            id="Theatres/Cinemas">
+            <div class="filter-by-type" id="Theatres/Cinemas">
+              <img class="subCategory-image"
+                src="https://files.guidedanmark.org/files/466/219170_VDKType-biografer.jpg">
+              <p class="filter-label">Theatres/Cinemas</p>
+            </div>
+          </button>
+          <button class="button-filter" onclick="filterByType(this.value)" value="Bike Rentals" id="Bike Rentals">
+            <div class="filter-by-type" id="Bike Rentals">
+              <img class="subCategory-image"
+                src="https://files.guidedanmark.org/files/466/219171_VDKType-cykeludlejning.jpg">
+              <p class="filter-label">Bike Rentals</p>
+            </div>
+          </button>
+          <button class="button-filter" onclick="filterByType(this.value)" value="Golf Courses" id="Golf Courses">
+            <div class="filter-by-type" id="Golf Courses">
+              <img class="subCategory-image" src="https://files.guidedanmark.org/files/466/219151_VDKType-golfklub.jpg">
+              <p class="filter-label">Golf Courses</p>
+            </div>
+          </button>
+          <button class="button-filter" onclick="filterByType(this.value)" value="Horse Activities"
+            id="Horse Activities">
+            <div class="filter-by-type" id="Horse Activities">
+              <img class="subCategory-image"
+                src="https://files.guidedanmark.org/files/466/219152_VDKType-hesteudlejning.jpg">
+              <p class="filter-label">Horse Activities</p>
+            </div>
+          </button>
+          <button class="button-filter" onclick="filterByType(this.value)" value="Yachting harbours"
+            id="Yachting harbours">
+            <div class="filter-by-type" id="Yachting harbours">
+              <img class="subCategory-image"
+                src="https://files.guidedanmark.org/files/466/219156_VDKType-lystbaadhavne.jpg">
+              <p class="filter-label">Yachting harbours</p>
+            </div>
+          </button>
+          <button class="button-filter" onclick="filterByType(this.value)" value="Shopping" id="Shopping">
+            <div class="filter-by-type" id="Shopping">
+              <img class="subCategory-image" src="https://files.guidedanmark.org/files/466/219160_VDKType-shopping.jpg">
+              <p class="filter-label">Shopping</p>
+            </div>
+          </button>
+          <button class="button-filter" onclick="filterByType(this.value)" value="Sightseeing" id="Sightseeing">
+            <div class="filter-by-type" id="Sightseeing">
+              <img class="subCategory-image" src="https://files.guidedanmark.org/files/466/214602_vdktype-4.jpg">
+              <p class="filter-label">Sightseeing</p>
+            </div>
+          </button>
+          <button class="button-filter" onclick="filterByType(this.value)" value="Bike Rentals" id="Bike Rentals">
+            <div class="filter-by-type" id="Bike Rentals">
+              <img class="subCategory-image"
+                src="https://files.guidedanmark.org/files/466/219171_VDKType-cykeludlejning.jpg">
+              <p class="filter-label">Bike Rentals</p>
+            </div>
+          </button>
+          <button class="button-filter" onclick="filterByType(this.value)" value="Bike Rentals" id="Bike Rentals">
+            <div class="filter-by-type" id="Beaches and lidos">
+              <img class="subCategory-image" src="Beaches and lidos">
+              <p class="filter-label">Beaches and lidos</p>
+            </div>
+          </button>
+          <button class="button-filter" onclick="filterByType(this.value)" value="Swimming pools and water parks"
+            id="Swimming pools and water parks">
+            <div class="filter-by-type" id="Swimming pools and water parks">
+              <img class="subCategory-image"
+                src="https://files.guidedanmark.org/files/466/219164_VDKType-svoemmehaller.jpg">
+              <p class="filter-label">Swimming pools and water parks</p>
+            </div>
+          </button>
+          <button class="button-filter" onclick="filterByType(this.value)" value="DIY Tours" id="DIY Tours">
+            <div class="filter-by-type" id="DIY Tours">
+              <img class="subCategory-image"
+                src="https://files.guidedanmark.org/files/466/219166_VDKType-turforslag.jpg">
+              <p class="filter-label">DIY Tours</p>
+            </div>
+          </button>
+          <button class="button-filter" onclick="filterByType(this.value)" value="Wellness" id="Wellness">
+            <div class="filter-by-type" id="Wellness">
+              <img class="subCategory-image" src="https://files.guidedanmark.org/files/466/214607_vdktype-13.jpg">
+              <p class="filter-label">Wellness</p>
+            </div>
+          </button>
+          <button class="button-filter" onclick="filterByType(this.value)" value="Swimming lakes" id="Swimming lakes">
+            <div class="filter-by-type" id="Swimming lakes">
+              <img class="subCategory-image" src="https://files.guidedanmark.org/files/466/219172_VDKType-Bade.jpg">
+              <p class="filter-label">Swimming lakes</p>
+            </div>
+          </button>
+          <button class="button-filter" onclick="filterByType(this.value)" value="Indoor fun for young and old"
+            id="Indoor fun for young and old">
+            <div class="filter-by-type" id="Indoor fun for young and old">
+              <img class="subCategory-image"
+                src="https://files.guidedanmark.org/files/466/219153_VDKType-indendoers-legeland.jpg">
+              <p class="filter-label">Indoor fun for young and old</p>
+            </div>
+          </button>
+          <button class="button-filter" onclick="filterByType(this.value)" value="Playgrounds" id="Playgrounds">
+            <div class="filter-by-type" id="Playgrounds">
+              <img class="subCategory-image"
+                src="https://files.guidedanmark.org/files/466/219155_VDKType-legepladser.jpg">
+              <p class="filter-label">Playgrounds</p>
+            </div>
+          </button>
+          <button class="button-filter" onclick="filterByType(this.value)" value="Outdoor Gym" id="Outdoor Gym">
+            <div class="filter-by-type" id="Outdoor Gym">
+              <img class="subCategory-image"
+                src="https://files.guidedanmark.org/files/466/219157_VDKType-naturfitness.jpg">
+              <p class="filter-label">Outdoor Gym</p>
+            </div>
+          </button>
+          <button class="button-filter" onclick="filterByType(this.value)" value="Other activities"
+            id="Other activities">
+            <div class="filter-by-type" id="Other activities">
+              <img class="subCategory-image" src="https://files.guidedanmark.org/files/466/214617_vdktype-20.jpg">
+              <p class="filter-label">Other activities</p>
+            </div>
+          </button>
+        </div>
+        <p class="filter-title-2">Filter by something</p>
+        <div class="filter-by-something">
+          <button class="filter-by-something-box active-filter" onclick="filterBySomething(this.value)" value="default"
+            id="default">default</button>
+          <button class="filter-by-something-box" onclick="filterBySomething(this.value)" value="family"
+            id="family">family</button>
+          <button class="filter-by-something-box" onclick="filterBySomething(this.value)" value="single"
+            id="single">single</button>
+          <button class="filter-by-something-box" onclick="filterBySomething(this.value)" value="couple"
+            id="couple">couple</button>
+          <button class="filter-by-something-box" onclick="filterBySomething(this.value)" value="bigger group"
+            id="bigger group">bigger group</button>
+          <button class="filter-by-something-box" onclick="filterBySomething(this.value)" value="friends"
+            id="friends">friends</button>
+        </div>
+
+        <div class="filter-cta-buttons">
+          <button class="reset-button" onclick="orderByLatest(); getBackFilter()">reset</button>
+          <button class="apply-button" onclick="getBackFilter()">apply</button>
+        </div>
+
+      </div>
+    </div>
+    <div class="container-placestoeat">
+      <div class="sticky-header">
+        <div class="sticky-header-width">
+          <div class="flexbox-placestoeat-header">
+            <img class="back-icon" src="/img/icons/back-icon.svg" alt="back icon" onclick="goBack();" />
+            <p class="header-placestoeat">
+              Activities in <span class="red">Aarhus</span>
+            </p>
+          </div>
+          <div class="explore-flexbox">
+            <input placeholder="Explore" class="explore-search" onkeyup="searchActivities(this.value)" />
+            <img class="filter-icon" src="/img/icons/filter-icon.svg" alt="filter icon" onclick="openFilter()" />
+          </div>
+        </div>
+      </div>
+      <div class="content-box">
+        <select id="sortBy" onchange="orderBy(this.value)" class="order-select">
+          <option value="latest" selected>Latest</option>
+          <option value="oldest">Oldest</option>
+        </select>
+
+        <div id="fetched-activities"></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Detailed View page - Marius -->
+  <section id="detailedview" class="page">
+    <img class="back-icon-detailedview" src="/img/icons/back-icon.svg" alt="back icon" onclick="goBack();" />
+    <div id="detailedView-append">
+    </div>
+  </section>
+
+  <!-- bookmarks page David -->
+  <section id="bookmarks" class="page">
+
+    <div class="favorites-edit-div">
+      <h2 class="favorites-heading">Favourites</h2>
+      <button class="link-to-edit-page" onclick="navigateTo('edit-page')">
+        <img src="./img/edit-image.png" alt="edit-image" class="edit-image">
+      </button>
+    </div>
+
+    <div class="container">
+      <div class="question">
+        <button value="Wishlist" id="wishlist" class="accordion">Wishlist</button>
+        <div class="panel">
+          <div class="wishlist-content">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="question">
+        <button class="accordion">Custom list</button>
+        <div class="panel">
+          <img src="./img/example-image-bookmarks.png" class="example-image-bookmarks.png">
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="question">
+        <button class="accordion">Places to visit</button>
+        <div class="panel">
+          <img src="./img/example-image-bookmarks.png" class="example-image-bookmarks.png">
+        </div>
+      </div>
+    </div>
+
+    <div class="upcoming-events-div">
+      <h2 class="upcoming-events-heading">Upcoming events</h2>
+    </div>
+
+    <div class="date-event-div">
+
+      <div class="date-div">
+        <p>May</p>
+        <p>14</p>
+      </div>
+
+      <div class="event-div">
+        <p class="event-name">Tour de Femme</p>
+        <p class="event-location">I og omkring Aarhus, Aarhus C</p>
+      </div>
+
+    </div>
+
+    <div class="date-event-div">
+
+      <div class="date-div">
+        <p>May</p>
+        <p>14</p>
+      </div>
+
+      <div class="event-div">
+        <p class="event-name">Tour de Femme</p>
+        <p class="event-location">I og omkring Aarhus, Aarhus C</p>
+      </div>
+
+    </div>
+
+
+  </section>
+  <!-- Edit the lists page David -->
+  <section id="edit-page" class="page">
+
+    <div class="favorites-edit-page-div">
+      <h2 class="favorites-heading-edit-page">Favourites</h2>
+      <img class="back-icon-detailedview" src="/img/icons/back-icon.svg" alt="back icon"
+        onclick="navigateTo('bookmarks');" />
+    </div>
+    <form>
+      <div class="input-trash">
+        <input class="input" type="text" id="txt" placeholder="Wishlist" />
+        <img src="./img/trash.png" alt="trash" class="trash">
+      </div>
+
+      <div class="input-trash">
+        <input class="input" type="text" id="txt" placeholder="Custom list" />
+        <img src="./img/trash.png" alt="trash" class="trash">
+      </div>
+
+      <div class="input-trash">
+        <input class="input" type="text" id="txt" placeholder="Places to visit" />
+        <img src="./img/trash.png" alt="trash" class="trash">
+      </div>
+
+      <div class="upcoming-events-div">
+        <h2 class="upcoming-events-heading">Upcoming events</h2>
+      </div>
+
+      <div class="date-event-div">
+
+        <div class="date-div">
+          <p>May</p>
+          <p>14</p>
+        </div>
+
+        <div class="event-div">
+          <p class="event-name">Tour de Femme</p>
+          <p class="event-location">I og omkring Aarhus, Aarhus C</p>
+        </div>
+
+        <div class="trash-div">
+          <img src="./img/trash.png" alt="trash" class="trash-on-event">
+        </div>
+
+      </div>
+
+      <div class="date-event-div date-event-div-edit-page">
+
+        <div class="date-div">
+          <p>May</p>
+          <p>14</p>
+        </div>
+
+        <div class="event-div">
+          <p class="event-name">Tour de Femme</p>
+          <p class="event-location">I og omkring Aarhus, Aarhus C</p>
+        </div>
+
+        <div class="trash-div">
+          <img src="./img/trash.png" alt="trash" class="trash-on-event">
+        </div>
+
+      </div>
+
+      <div class="apply-cancel-button-div">
+        <input class="cancel-button" type="button" value="Cancel" onclick="navigateTo('bookmarks');">
+        <input class="apply-button" type="submit" value="Apply"
+          onclick="passvalues(); navigateTo('bookmarks'); window.location.reload();" />
+      </div>
+    </form>
+
+  </section>
+  <!-- Profile page -->
+  <section id="profile" class="page">
+    <h2 class="profile">Profile</h2>
+    <div class="plus">+</div>
+    <p class="name">Name Surname</p>
+
+    <div class="do-you-like">
+      <img src="./img/social-illustration.png" alt="social-illustration" class="social-illustration">
+      <div class="h-p-div">
+        <h4 class="do-you-like-heading">Do you like our app?</h4>
+        <p class="recommend">Recommend it now</p>
+      </div>
+      <img src="./img/right-arrow.png" alt="right-arrow" class="right-arrow">
+    </div>
+
+    <div class="switch">
+      <p>Recommendation alert</p>
+      <input type="checkbox" id="toggleAll" />
+      <label for="toggleAll"></label>
+    </div>
+
+    <div class="language">
+      <p class="language-p">Language</p>
+      <div class="flag-english-div">
+        <img src="./img/flag.png" alt="flag" class="flag">
+        <p class="english">English</p>
+      </div>
+    </div>
+
+    <div class="links">
+      <p>Privacy and Policy</p>
+
+    </div>
+    <div class="links">
+      <p>Terms & Conditions</p>
+
+    </div>
+    <div class="links">
+      <p>Support</p>
+
+    </div>
+
+  </section>
+
+  <!-- SPA functionality  -->
+  <script script src="/js/spa.js"></script>
+  <!-- main js file -->
+  <script src="js/main.js"></script>
+  <script src="/js/router.js"></script>
+</body>
+
+</html>
